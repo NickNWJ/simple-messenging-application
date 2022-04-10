@@ -1,6 +1,6 @@
 # Chat Application using PHP with MySQL & Ajax
 
-version: 1.0.0
+version: 1.0.1
 
 ## TECHNOLOGIES
 
@@ -10,6 +10,8 @@ version: 1.0.0
 1. BOOTSTRAP 5
 1. HTML
 1. CSS
+
+## Credit
 
 ## Full Tutorial
 
