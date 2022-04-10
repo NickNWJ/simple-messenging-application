@@ -34,7 +34,7 @@ $query_builder = TRUE;
 $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 if ($conn)
 {
-    echo("Connection established!");
+    echo($cleardb_url);
 } else {
     echo("Connection failed!");
 }
