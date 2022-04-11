@@ -7,5 +7,6 @@ $cleardb_password = "d8b2b505";
 $cleardb_db = "heroku_26135876c73b685";
 
 // Connect to DB
-$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password);
+$conn = new mysqli($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
 ?>
