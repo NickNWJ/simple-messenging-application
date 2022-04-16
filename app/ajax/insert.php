@@ -17,11 +17,10 @@ if (isset($_SESSION['username'])) {
 
 	# get the logged in user's username from the SESSION
 	$from_id = $_SESSION['user_id'];
-	$opened = 0;
-	$sql = "SET time_zone = '+08:00';";
-	$sql .= "INSERT INTO 
-	       chats (from_id, to_id, message, opened, NOW()) 
-	       VALUES (?, ?, ?, ?, ?);";
+
+	$sql = "INSERT INTO 
+	       chats (from_id, to_id, message) 
+	       VALUES (?, ?, ?)";
 	$stmt = $conn->prepare($sql);
 	$res  = $stmt->execute([$from_id, $to_id, $message]);
 
