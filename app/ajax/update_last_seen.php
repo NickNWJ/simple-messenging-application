@@ -12,8 +12,7 @@ if (isset($_SESSION['username'])) {
 	$id = $_SESSION['user_id'];
 	
 	//set sql server time zone
-	$sql = "SET GLOBAL time_zone = 'Asia/Kuala_Lumpur';";
-	$sql .= "UPDATE users
+	$sql = "UPDATE users
 	        SET last_seen = NOW() 
 	        WHERE user_id = ?";
 	$stmt = $conn->prepare($sql);
