@@ -12,7 +12,8 @@ if (isset($_SESSION['username'])) {
 	$id = $_SESSION['user_id'];
 	
 	//set sql server time zone
-	$sql = "UPDATE users
+	$sql = "SET time_zone = '+08:00';";
+	$sql .= "UPDATE users
 	        SET last_seen = NOW() 
 	        WHERE user_id = ?";
 	$stmt = $conn->prepare($sql);
