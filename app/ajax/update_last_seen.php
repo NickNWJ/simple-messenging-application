@@ -10,14 +10,11 @@ if (isset($_SESSION['username'])) {
 
 	# get the logged in user's username from SESSION
 	$id = $_SESSION['user_id'];
-
-	$date = new DateTime();
-	$date->setTimezone(new DateTimeZone('Asia/Kuala Lumpur'));
-
-	$fdate = $date->format('Y-m-d H:i:s');
-
-	$sql = "UPDATE users
-	        SET last_seen = '$fdate'
+	
+	//set sql server time zone
+	$sql = "SET GLOBAL time_zone = 'Asia/Kuala_Lumpur';";
+	$sql .= "UPDATE users
+	        SET last_seen = NOW() 
 	        WHERE user_id = ?";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([$id]);

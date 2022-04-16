@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
     				 text-center">
 		   <i class="fa fa-user-times d-block fs-big"></i>
            The user "<?=htmlspecialchars($_POST['key'])?>"
-           is  not found.
+           is not found.
 		</div>
     <?php }
     }
