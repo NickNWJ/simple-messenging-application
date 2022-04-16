@@ -23,7 +23,6 @@ if (isset($_SESSION['username'])) {
 	       chats (from_id, to_id, message, opened, NOW()) 
 	       VALUES (?, ?, ?, ?);";
 	$stmt = $conn->prepare($sql);
-	$stmt_time = $conn->prepare($sql_time);
 	$res  = $stmt->execute([$from_id, $to_id, $message]);
 
     # if the message inserted
