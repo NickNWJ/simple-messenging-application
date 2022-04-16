@@ -21,7 +21,7 @@ if (isset($_SESSION['username'])) {
 	$sql = "SET time_zone = '+08:00';";
 	$sql .= "INSERT INTO 
 	       chats (from_id, to_id, message, opened, NOW()) 
-	       VALUES (?, ?, ?, ?);";
+	       VALUES (?, ?, ?, ?, ?);";
 	$stmt = $conn->prepare($sql);
 	$res  = $stmt->execute([$from_id, $to_id, $message]);
 
