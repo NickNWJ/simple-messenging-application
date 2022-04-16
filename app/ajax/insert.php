@@ -37,10 +37,10 @@ if (isset($_SESSION['username'])) {
 	   $stmt2->execute([$from_id, $to_id, $from_id, $to_id]);
 
 	    // setting up the time zone
-		$date = new DateTime();
-		$date->setTimezone(new DateTimeZone('Asia/Kuala Lumpur'));
-	
-		$fdate = $date->format('Y-m-d H:i:s');
+		define('TIMEZONE', 'Asia/Kuala_Lumpur');
+		date_default_timezone_set(TIMEZONE);
+
+		$time = date("h:i:s a");
 
 		if ($stmt2->rowCount() == 0 ) {
 			# insert them into conversations table 
@@ -55,7 +55,7 @@ if (isset($_SESSION['username'])) {
 		<p class="rtext align-self-end
 		          border rounded p-2 mb-1">
 		    <?=$message?>  
-		    <small class="d-block"><?=$fdate?></small>      	
+		    <small class="d-block"><?=$time?></small>      	
 		</p>
 
     <?php 

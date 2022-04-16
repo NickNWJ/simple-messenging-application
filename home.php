@@ -56,7 +56,7 @@
     			       id="searchText"
     			       class="form-control">
     			<button class="btn btn-primary" 
-    			        id="serachBtn">
+    			        id="searchBtn">
     			        <i class="fa fa-search"></i>	
     			</button>       
     		</div>
@@ -123,7 +123,7 @@
        });
 
        // Search using the button
-       $("#serachBtn").on("click", function(){
+       $("#searchBtn").on("click", function(){
        	 var searchText = $("#searchText").val();
          if(searchText == "") return;
          $.post('app/ajax/search.php', 
